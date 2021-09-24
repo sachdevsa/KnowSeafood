@@ -1,0 +1,44 @@
+<div class="page-width page-content">
+  <div>
+
+    <div class="login__wrapper">
+
+      <header class="login__header">
+        <h4 class="h3">Become a KnowBuddy!</h4>
+        <!-- <h1 class="section-header__title">{{ 'customer.register.title' | t }}</h1> -->
+        <p class="login__paragraph">Welcome to our community of seafood-loving food nerds! <br/> Use discouunt code <span>KS20</span> for <span>$20 off your first purchase.</span></p>
+        <p class="login__account-register">Already have an account? <a href="/account/login">Sign In</a></p>
+        <h5 class="login__subtitle">Create Your Account</h5>
+      </header>
+
+      <div class="form-vertical">
+        {%- form 'create_customer' -%}
+        <input type="hidden" name="return_to" value="/collections/shop">
+
+          {{ form.errors | default_errors }}
+<!-- 
+          <label for="FirstName">{{ 'customer.register.first_name' | t }}</label>
+          <input type="text" name="customer[first_name]" id="FirstName" class="input-full"{% if form.first_name %} value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+
+          <label for="LastName">{{ 'customer.register.last_name' | t }}</label>
+          <input type="text" name="customer[last_name]" id="LastName" class="input-full"{% if form.last_name %} value="{{ form.last_name }}"{% endif %} autocapitalize="words"> -->
+
+          <!-- <label for="Email">{{ 'customer.register.email' | t }}</label> -->
+          <input type="email" placeholder="Email" name="customer[email]" id="Email" class="input-full{% if form.errors contains 'email' %} error{% endif %}"{% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+
+          <!-- <label for="CreatePassword">{{ 'customer.register.password' | t }}</label> -->
+          <input type="password" placeholder="Password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}">
+
+          <p>
+            <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn-primary btn-fullwidth">
+          </p>
+
+          <h5 class="login__alt-title"><span>Or Sign Up With</span></h5>
+
+        {%- endform -%}
+      </div>
+
+    </div>
+
+  </div>
+</div>
